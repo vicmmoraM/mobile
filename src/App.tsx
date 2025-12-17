@@ -34,13 +34,12 @@ import '@ionic/react/css/display.css';
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
+ * COMENTADO PARA DESACTIVAR MODO OSCURO
  */
 
 /* import '@ionic/react/css/palettes/dark.always.css'; */
 /* import '@ionic/react/css/palettes/dark.class.css'; */
-import '@ionic/react/css/palettes/dark.system.css';
+/* import '@ionic/react/css/palettes/dark.system.css'; */  // <-- ESTA LÍNEA ESTABA CAUSANDO EL PROBLEMA
 
 /* Theme variables */
 import './theme/variables.css';

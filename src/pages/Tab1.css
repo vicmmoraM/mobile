@@ -1,0 +1,306 @@
+/* Variables de color */
+:root {
+  --primary-teal: #14b8a6;
+  --primary-teal-light: #5eead4;
+  --primary-teal-dark: #0d9488;
+  --background: #f8fafc;
+  --card-bg: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+}
+
+/* FORZAR MODO CLARO */
+ion-page {
+  background: #f8fafc !important;
+}
+
+/* Contenido general */
+ion-content {
+  --background: #f8fafc !important;
+  background: #f8fafc !important;
+}
+
+/* Header personalizado */
+ion-header {
+  background: #ffffff !important;
+}
+
+ion-toolbar {
+  --background: #ffffff !important;
+  --color: #1e293b !important;
+  --border-width: 0;
+  padding: 16px 0 8px 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.main-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 0;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 4px 0 0 0;
+  font-weight: 400;
+}
+
+.date-badge {
+  font-size: 12px;
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  background: var(--background);
+  border-radius: 8px;
+}
+
+/* Grid de estadísticas */
+.stats-grid {
+  padding: 16px 0;
+}
+
+.stat-card {
+  background: #ffffff !important;
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+}
+
+.stat-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Sección de actividades */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 16px 12px 16px;
+}
+
+.section-header h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.completion-badge {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Tarjetas de hábitos */
+.habit-card {
+  background: #ffffff !important;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.habit-card:active {
+  transform: scale(0.98);
+}
+
+.habit-card.completed {
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  border-color: var(--primary-teal-light);
+}
+
+.habit-checkbox {
+  flex-shrink: 0;
+}
+
+.habit-card ion-checkbox {
+  --size: 24px;
+  --border-radius: 8px;
+  --border-width: 2px;
+  --border-color: #cbd5e1;
+  --border-color-checked: var(--primary-teal);
+  --background-checked: var(--primary-teal);
+  --checkmark-color: white;
+}
+
+.habit-info {
+  flex: 1;
+}
+
+.habit-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.habit-card.completed .habit-name {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.habit-description {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.habit-icon-container {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--primary-teal-dark) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.habit-icon {
+  font-size: 20px;
+  color: white;
+}
+
+/* Tarjeta de progreso */
+.progress-card {
+  margin: 24px 16px 32px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+.progress-card ion-card-content {
+  padding: 24px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.progress-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.progress-percentage {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-teal);
+}
+
+/* Progreso circular */
+.circular-progress {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.progress-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.progress-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Meta semanal */
+.weekly-goal {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.goal-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.goal-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.goal-bar {
+  flex: 1;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.goal-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-teal) 0%, var(--primary-teal-light) 100%);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.goal-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Responsivo */
+@media (min-width: 768px) {
+  .stats-grid,
+  .habit-card,
+  .progress-card {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
