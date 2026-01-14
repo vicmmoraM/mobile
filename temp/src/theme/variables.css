@@ -1,2 +1,85 @@
 /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Configuración de HTML y Body para permitir scroll en componentes */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* El contenedor principal de React */
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Variables de colores para toda la app */
+:root {
+  /* Colores principales */
+  --bg-primary: #000000;
+  --bg-secondary: #18181b;
+  --bg-tertiary: #27272a;
+  
+  /* Colores de texto */
+  --text-primary: #ffffff;
+  --text-secondary: #71717a;
+  --text-tertiary: #d1d5db;
+  
+  /* Colores de acento */
+  --accent-primary: #6366f1;
+  --accent-secondary: #4f46e5;
+  --accent-light: #818cf8;
+  --accent-lighter: #c7d2fe;
+  
+  /* Colores de estado */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --danger: #dc2626;
+  
+  /* Otros */
+  --border-radius-sm: 12px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-full: 9999px;
+  
+  /* Transiciones */
+  --transition-fast: 0.2s;
+  --transition-normal: 0.3s;
+}
+
+/* Scrollbar personalizado (opcional pero se ve bien) */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Smooth scroll para iOS */
+* {
+  -webkit-overflow-scrolling: touch;
+}

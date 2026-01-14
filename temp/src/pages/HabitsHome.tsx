@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { Plus, Menu, CloudRain, Sprout, ListTodo, ChevronDown, BarChart3, Settings } from 'lucide-react';
-import './Tab1.css';
+import './HabitsHome.css';
 
 interface Habit {
   id: string;
@@ -11,7 +11,7 @@ interface Habit {
   completed: boolean;
 }
 
-const Tab1: React.FC = () => {
+const HabitsHome: React.FC = () => {
   const history = useHistory();
   const location = useLocation();
   const [habits, setHabits] = useState<Habit[]>([]);
@@ -314,4 +314,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default HabitsHome;
