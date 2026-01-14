@@ -137,58 +137,6 @@ const HabitsHome: React.FC = () => {
               <Plus size={24} strokeWidth={2.5} />
               Crear un nuevo hábito
             </button>
-
-            {/* Onboarding Card */}
-            {showOnboarding && (
-              <div className="onboarding-card">
-                <div className="onboarding-header">
-                  <div>
-                    <h3 className="onboarding-title">Prepárate para Grit 🔥</h3>
-                    <p className="onboarding-progress">Hoy, 0/3</p>
-                  </div>
-                  <button 
-                    onClick={() => setShowOnboarding(false)}
-                    className="chevron-button"
-                  >
-                    <ChevronDown size={24} />
-                  </button>
-                </div>
-                
-                <div className="onboarding-content">
-                  <p className="onboarding-subtitle">Configúrate en minutos y sé constante</p>
-                  
-                  <div className="onboarding-item" onClick={() => createHabit('good')}>
-                    <div className="onboarding-icon">
-                      <Sprout size={20} />
-                    </div>
-                    <div className="onboarding-item-content">
-                      <h4 className="onboarding-item-title">Agrega un buen hábito</h4>
-                      <p className="onboarding-item-description">Comienza una rutina positiva</p>
-                    </div>
-                  </div>
-
-                  <div className="onboarding-item" onClick={() => createHabit('bad')}>
-                    <div className="onboarding-icon">
-                      <CloudRain size={20} />
-                    </div>
-                    <div className="onboarding-item-content">
-                      <h4 className="onboarding-item-title">Agrega un mal hábito</h4>
-                      <p className="onboarding-item-description">Rompe un hábito no deseado</p>
-                    </div>
-                  </div>
-
-                  <div className="onboarding-item" onClick={() => createHabit('task')}>
-                    <div className="onboarding-icon">
-                      <ListTodo size={20} />
-                    </div>
-                    <div className="onboarding-item-content">
-                      <h4 className="onboarding-item-title">Agregar un hábito de tarea</h4>
-                      <p className="onboarding-item-description">Rastrea una tarea única</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
           </>
         ) : (
           <>
