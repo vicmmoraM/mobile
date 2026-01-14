@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { ListTodo, BarChart3, Settings, Menu, Trophy, Flame, Target, Calendar, TrendingUp } from 'lucide-react';
+import {
+  BarChart3,
+  Menu,
+  Flame,
+  Target,
+  Calendar,
+  TrendingUp,
+  Sprout,
+  CloudRain,
+  ListTodo,
+  Settings,
+  Trophy
+} from 'lucide-react';
 import './Tab2.css';
 
 const Tab2: React.FC = () => {
@@ -26,110 +38,126 @@ const Tab2: React.FC = () => {
       </div>
 
       <div className="main-content">
-        <p className="section-subtitle">Tu progreso en detalle</p>
+        <div className="section-subtitle">Tu progreso por tipo de hábito</div>
 
-        {/* Summary Cards Grid */}
+        {/* Resumen General - Balance */}
         <div className="stats-grid">
-          {/* Card 1: Racha Actual */}
           <div className="stat-card">
             <div className="stat-icon-wrapper">
-              <Flame size={20} className="stat-icon theme-color" />
+              <TrendingUp size={24} className="stat-icon theme-color" />
             </div>
             <div className="stat-info">
-              <span className="stat-value">7 días</span>
-              <span className="stat-label">Racha actual</span>
+              <span className="stat-value">85%</span>
+              <span className="stat-label">Eficiencia Total</span>
             </div>
           </div>
-
-          {/* Card 2: Tasa de éxito */}
           <div className="stat-card">
             <div className="stat-icon-wrapper">
-              <Target size={20} className="stat-icon green-color" />
+              <Calendar size={24} className="stat-icon purple-color" />
             </div>
             <div className="stat-info">
-              <span className="stat-value">78%</span>
-              <span className="stat-label">Tasa de éxito</span>
-            </div>
-          </div>
-
-          {/* Card 3: Días activos */}
-          <div className="stat-card">
-            <div className="stat-icon-wrapper">
-              <Calendar size={20} className="stat-icon theme-color" />
-            </div>
-            <div className="stat-info">
-              <span className="stat-value">23</span>
-              <span className="stat-label">Días activos</span>
-            </div>
-          </div>
-
-          {/* Card 4: Mejor racha */}
-          <div className="stat-card">
-            <div className="stat-icon-wrapper">
-              <TrendingUp size={20} className="stat-icon purple-color" />
-            </div>
-            <div className="stat-info">
-              <span className="stat-value">14 días</span>
-              <span className="stat-label">Mejor racha</span>
+              <span className="stat-value">12</span>
+              <span className="stat-label">Días Perfectos</span>
             </div>
           </div>
         </div>
 
-        {/* Weekly Chart */}
+        {/* Buenos Hábitos (Green) */}
         <div className="chart-section">
-          <h3 className="section-title">Hábitos completados esta semana</h3>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+            <div style={{ padding: '8px', backgroundColor: 'rgba(34, 197, 94, 0.2)', borderRadius: '8px' }}>
+              <Sprout size={20} color="#22c55e" />
+            </div>
+            <h3 className="section-title" style={{ margin: 0 }}>Buenos Hábitos</h3>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+            <div>
+              <div style={{ fontSize: '24px', fontWeight: 'bold' }}>18</div>
+              <div style={{ fontSize: '12px', color: '#a1a1aa' }}>Completados esta semana</div>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#22c55e' }}>92%</div>
+              <div style={{ fontSize: '12px', color: '#a1a1aa' }}>Tasa de éxito</div>
+            </div>
+          </div>
+
+          {/* Simple Progress Bar for Good Habits */}
+          <div style={{ width: '100%', height: '8px', backgroundColor: '#27272a', borderRadius: '4px', overflow: 'hidden' }}>
+            <div style={{ width: '92%', height: '100%', backgroundColor: '#22c55e' }}></div>
+          </div>
+        </div>
+
+        {/* Malos Hábitos (Red) */}
+        <div className="chart-section">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+            <div style={{ padding: '8px', backgroundColor: 'rgba(239, 68, 68, 0.2)', borderRadius: '8px' }}>
+              <CloudRain size={20} color="#ef4444" />
+            </div>
+            <h3 className="section-title" style={{ margin: 0 }}>Malos Hábitos</h3>
+          </div>
+
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+            <div>
+              <div style={{ fontSize: '24px', fontWeight: 'bold' }}>5</div>
+              <div style={{ fontSize: '12px', color: '#a1a1aa' }}>Días evadidos</div>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <div style={{ fontSize: '24px', fontWeight: 'bold', color: '#ef4444' }}>3</div>
+              <div style={{ fontSize: '12px', color: '#a1a1aa' }}>Recaídas</div>
+            </div>
+          </div>
+
+          {/* Weekly Avoidance Chart (Simple Bars) */}
           <div className="bar-chart-container">
-            {['L', 'M', 'X', 'J', 'V', 'S', 'D'].map((day, index) => {
-              const heights = [40, 60, 25, 60, 40, 15, 25]; // Mock data
-              return (
-                <div key={day} className="bar-column">
-                  <div className="bar-bg">
-                    <div
-                      className="bar-fill"
-                      style={{ height: `${heights[index]}%` }}
-                    ></div>
-                  </div>
-                  <span className="bar-label">{day}</span>
-                </div>
-              );
-            })}
+            <div className="bar-column">
+              <div className="bar-bg"><div className="bar-fill" style={{ height: '80%', backgroundColor: '#ef4444' }}></div></div>
+              <span className="bar-label">L</span>
+            </div>
+            <div className="bar-column">
+              <div className="bar-bg"><div className="bar-fill" style={{ height: '100%', backgroundColor: '#ef4444' }}></div></div>
+              <span className="bar-label">M</span>
+            </div>
+            <div className="bar-column">
+              <div className="bar-bg"><div className="bar-fill" style={{ height: '40%', backgroundColor: '#ef4444' }}></div></div>
+              <span className="bar-label">X</span>
+            </div>
+            <div className="bar-column">
+              <div className="bar-bg"><div className="bar-fill" style={{ height: '90%', backgroundColor: '#ef4444' }}></div></div>
+              <span className="bar-label">J</span>
+            </div>
+            <div className="bar-column">
+              <div className="bar-bg"><div className="bar-fill" style={{ height: '60%', backgroundColor: '#ef4444' }}></div></div>
+              <span className="bar-label">V</span>
+            </div>
+            <div className="bar-column">
+              <div className="bar-bg"><div className="bar-fill" style={{ height: '85%', backgroundColor: '#ef4444' }}></div></div>
+              <span className="bar-label">S</span>
+            </div>
+            <div className="bar-column">
+              <div className="bar-bg"><div className="bar-fill" style={{ height: '95%', backgroundColor: '#ef4444' }}></div></div>
+              <span className="bar-label">D</span>
+            </div>
           </div>
         </div>
 
-        {/* Monthly Trend Chart */}
+        {/* Tareas (Blue) */}
         <div className="chart-section">
-          <h3 className="section-title">Tendencia mensual</h3>
-          <div className="line-chart-container">
-            <svg viewBox="0 0 300 100" className="line-chart-svg">
-              {/* Grid Lines */}
-              <line x1="0" y1="20" x2="300" y2="20" stroke="#27272a" strokeWidth="1" />
-              <line x1="0" y1="50" x2="300" y2="50" stroke="#27272a" strokeWidth="1" />
-              <line x1="0" y1="80" x2="300" y2="80" stroke="#27272a" strokeWidth="1" />
-
-              {/* The Line - Using a moderate curve */}
-              <path
-                d="M0,80 C50,75 100,50 150,48 S250,55 300,58"
-                fill="none"
-                stroke="#818cf8"
-                strokeWidth="2"
-              />
-
-              {/* Points */}
-              <circle cx="0" cy="80" r="3" fill="#818cf8" />
-              <circle cx="150" cy="48" r="3" fill="#818cf8" />
-              <circle cx="230" cy="52" r="3" fill="#818cf8" />
-              <circle cx="300" cy="58" r="3" fill="#818cf8" />
-            </svg>
-            <div className="chart-x-labels">
-              <span>S2</span>
-              <span>S3</span>
-              <span>S4</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+            <div style={{ padding: '8px', backgroundColor: 'rgba(99, 102, 241, 0.2)', borderRadius: '8px' }}>
+              <ListTodo size={20} color="#6366f1" />
             </div>
+            <h3 className="section-title" style={{ margin: 0 }}>Tareas Completadas</h3>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: '12px' }}>
+            <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#6366f1' }}>14</div>
+            <div style={{ fontSize: '14px', color: '#a1a1aa', paddingBottom: '6px' }}>tareas terminadas este mes</div>
           </div>
         </div>
 
         {/* Spacer for bottom nav */}
-        <div style={{ height: '100px' }}></div>
+        <div style={{ height: '80px' }}></div>
       </div>
 
       {/* Bottom Navigation */}

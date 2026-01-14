@@ -1,10 +1,11 @@
 .logros-page {
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     background-color: #000;
     color: #fff;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    display: flex;
-    flex-direction: column;
 }
 
 /* Header Styles (from Tab1.css) */
@@ -37,8 +38,9 @@
 
 .logros-content {
     flex: 1;
-    padding: 16px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px;
     padding-bottom: 100px;
 }
 
@@ -157,8 +159,8 @@
     border-radius: 99px;
 }
 
-/* Bottom Nav (Exact Copy from Tab1.css) */
-.bottom-nav {
+/* Bottom Navigation */
+.logros-bottom-nav {
     background-color: #18181b;
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
@@ -167,17 +169,21 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
 }
 
-.nav-container {
+.logros-nav-container {
     display: flex;
+    flex-direction: row;
+    /* FORCE ROW */
     justify-content: space-around;
     align-items: center;
+    width: 100%;
     max-width: 448px;
     margin: 0 auto;
 }
 
-.nav-button {
+.logros-nav-button {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,18 +194,20 @@
     border: none;
     cursor: pointer;
     color: #71717a;
+    flex: 1;
+    /* Added flex: 1 to ensure even spacing */
 }
 
-.nav-button.active {
+.logros-nav-button.active {
     background-color: #6366f1;
 }
 
-.nav-button span {
+.logros-nav-button span {
     font-size: 12px;
     font-weight: 500;
     color: #71717a;
 }
 
-.nav-button.active span {
+.logros-nav-button.active span {
     color: #ffffff;
 }
